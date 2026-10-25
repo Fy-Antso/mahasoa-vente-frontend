@@ -18,7 +18,7 @@ function LoginPage() {
     setError('');
     setSuccessMessage('');
 
-    api.post('login/', { username, password })
+    api.post('/api/login/', { username, password })
       .then((res) => {
         const user = res.data.user;
         localStorage.setItem('user', JSON.stringify(user));
