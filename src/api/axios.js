@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Configuration de l'instance d'Axios
 const api = axios.create({
-  baseURL: 'https://mahasoa-vente-backend.onrender.com/',
+  baseURL: 'https://mahasoa-vente-backend.onrender.com/login',
   timeout: 10000, // Limite le temps d'attente à 10 secondes
   headers: {
     'Content-Type': 'application/json',
@@ -15,7 +15,7 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (!error.response) {
-      console.error('Erreur réseau ou serveur Django inaccessible (https://mahasoa-vente-backend.onrender.com/)');
+      console.error('Erreur réseau ou serveur Django inaccessible (https://mahasoa-vente-backend.onrender.com/login)');
     } else {
       console.error(`Erreur HTTP ${error.response.status}:`, error.response.data);
     }
